@@ -1,10 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "mas.mekansim_astral_speed.mixin",
+  "package": "mas.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "mekansim_astral_speed.refmap.json",
   "mixins": [
+    "TileComponentEjectorMixin"
   ],
   "client": [
   ],

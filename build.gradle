@@ -139,6 +139,15 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+
+
+    maven {
+        name = "Modmaven"
+        url = "https://modmaven.dev/"
+        content {
+            includeGroup("mekanism")
+        }
+    }
 }
 
 dependencies {
@@ -166,6 +175,8 @@ dependencies {
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
+    implementation fg.deobf("mekanism:Mekanism:1.20.1-10.4.16.80")
+
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -184,6 +195,7 @@ tasks.named('processResources', ProcessResources).configure {
     filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
         expand replaceProperties + [project: project]
     }
+
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
